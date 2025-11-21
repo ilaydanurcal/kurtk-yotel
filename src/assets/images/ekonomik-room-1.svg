@@ -1,0 +1,8 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="300" fill="#F3F4F6"/>
+<rect x="50" y="50" width="300" height="200" fill="#E5E7EB"/>
+<rect x="70" y="70" width="260" height="160" fill="#D1D5DB"/>
+<text x="200" y="140" font-family="DM Sans, Arial, sans-serif" font-size="18" fill="#6B7280" text-anchor="middle">Ekonomik Room</text>
+<text x="200" y="165" font-family="DM Sans, Arial, sans-serif" font-size="14" fill="#9B9B9B" text-anchor="middle">2 Kişi Max</text>
+<text x="200" y="185" font-family="DM Sans, Arial, sans-serif" font-size="12" fill="#9B9B9B" text-anchor="middle">Ekstra Yatak Yok</text>
+</svg>

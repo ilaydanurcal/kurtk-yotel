@@ -1,0 +1,90 @@
+<!-- Breadcrumb -->
+<nav class="breadcrumb-nav" aria-label="breadcrumb">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><a routerLink="/">Anasayfa</a></li>
+      <li><a routerLink="/blog">Blog</a></li>
+      <li class="active" *ngIf="post">{{ post.title }}</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="blog-detail-hero" *ngIf="post">
+  <div class="container">
+    <div class="hero-content">
+      <span class="blog-category">{{ post.category }}</span>
+      <h1 class="blog-title">{{ post.title }}</h1>
+      <div class="blog-meta">
+        <span class="blog-date">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          {{ post.date }}
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Content -->
+<article class="blog-detail-content" *ngIf="post">
+  <div class="container">
+    <div class="blog-main">
+      <div class="blog-image-wrapper">
+        <img [src]="post.image" [alt]="post.title + ' - Kurtköy Otel Pendik Blog'" loading="lazy" (error)="onImageError($event)" />
+      </div>
+      
+      <div class="blog-article">
+        <div class="blog-content-text" [innerHTML]="post.content"></div>
+        
+        <!-- Call to Action -->
+        <div class="blog-cta">
+          <h3>Kurtköy Otel'de Konaklamak İster misiniz?</h3>
+          <p>Modern tasarım, konforlu odalar ve özenli hizmet anlayışımızla misafirlerimize unutulmaz bir konaklama deneyimi sunuyoruz.</p>
+          <div class="blog-cta-buttons">
+            <a routerLink="/odalar" class="btn-primary">Odalarımızı Gör</a>
+            <a routerLink="/iletisim" class="btn-secondary">Rezervasyon Yap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Posts -->
+    <aside class="related-posts" *ngIf="relatedPosts.length > 0">
+      <h2 class="related-title">İlgili Blog Yazıları - Kurtköy Otel Pendik</h2>
+      <div class="related-grid">
+        <article class="related-card" *ngFor="let relatedPost of relatedPosts">
+          <a [routerLink]="['/blog', relatedPost.slug]">
+            <div class="related-image-wrapper">
+              <img [src]="relatedPost.image" [alt]="relatedPost.title + ' - Kurtköy Otel Pendik Blog'" loading="lazy" (error)="onImageError($event)" />
+              <span class="related-category">{{ relatedPost.category }}</span>
+            </div>
+            <div class="related-content">
+              <h3>{{ relatedPost.title }}</h3>
+              <p class="related-excerpt">{{ relatedPost.excerpt }}</p>
+              <span class="related-link">Devamını Oku 
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </aside>
+  </div>
+</article>
+
+<!-- 404 Message -->
+<div class="blog-not-found" *ngIf="!post">
+  <div class="container">
+    <div class="not-found-content">
+      <h2>Yazı Bulunamadı</h2>
+      <p>Aradığınız blog yazısı bulunamadı.</p>
+      <a routerLink="/blog" class="btn-primary">Blog'a Dön</a>
+    </div>
+  </div>
+</div>
+

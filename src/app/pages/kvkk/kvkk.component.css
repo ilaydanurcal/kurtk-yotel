@@ -1,0 +1,120 @@
+.kvkk-page {
+  padding: 5rem 0;
+  background: var(--bg-white);
+}
+
+/* Hero Section */
+.kvkk-hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  padding: 6rem 0 4rem;
+  color: #fff;
+  text-align: center;
+}
+
+.kvkk-hero .page-title {
+  color: #fff;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: -1px;
+}
+
+.kvkk-hero .hero-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.7;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+}
+
+.kvkk-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.kvkk-section {
+  margin-bottom: 3rem;
+  padding: 3rem 2.5rem;
+  background: var(--bg-white);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.kvkk-section:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+
+.kvkk-section h2 {
+  color: var(--primary-color);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.kvkk-section p {
+  color: var(--text-medium);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.kvkk-section ul {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.kvkk-section ul li {
+  color: var(--text-medium);
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.kvkk-section ul li strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.info-box {
+  background: var(--bg-white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-light);
+  margin: 1.5rem 0;
+}
+
+.info-box p {
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.info-box p:last-child {
+  margin-bottom: 0;
+}
+
+.last-updated {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border-color);
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .kvkk-section {
+    padding: 1.5rem;
+  }
+
+  .kvkk-section h2 {
+    font-size: 1.5rem;
+  }
+}
+

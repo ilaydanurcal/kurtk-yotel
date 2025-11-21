@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.kurtkoyotel.com/sitemap.xml
+
+# Disallow admin and private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all important pages
+Allow: /
+Allow: /odalar
+Allow: /hakkimizda
+Allow: /iletisim
+Allow: /sss
+Allow: /blog
+Allow: /kvkk
+Allow: /sartlar-ve-kosullar
+
+# Crawl-delay
+Crawl-delay: 1
+

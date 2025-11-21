@@ -1,0 +1,44 @@
+<!-- Hero Section -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="page-title">Blog</h1>
+      <p class="hero-subtitle">İstanbul ve otelimiz hakkında güncel haberler, seyahat rehberleri ve özel içerikler</p>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Section -->
+<section class="blog-page">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Blog Yazılarımız</h2>
+      <p class="section-subtitle">İstanbul ve konaklama hakkında güncel içerikler ve rehberler</p>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-card" *ngFor="let post of blogPosts">
+        <div class="blog-image-wrapper">
+          <img [src]="post.image" [alt]="post.title" (error)="onImageError($event)" />
+          <span class="blog-category">{{ post.category }}</span>
+        </div>
+        <div class="blog-content">
+          <h2>{{ post.title }}</h2>
+          <p class="blog-date">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            {{ post.date }}
+          </p>
+          <p class="blog-excerpt">{{ post.excerpt }}</p>
+          <a [routerLink]="['/blog', post.slug]" class="blog-link">Devamını Oku 
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
