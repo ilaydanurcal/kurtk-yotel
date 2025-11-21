@@ -83,31 +83,31 @@ export class HomeComponent implements OnInit {
   ];
 
   roomFacilities = [
-    { icon: '❄️', title: 'Klima', description: 'Tüm odalarda merkezi klima sistemi' },
-    { icon: '📶', title: 'Ücretsiz WiFi', description: 'Yüksek hızlı, ücretsiz internet bağlantısı' },
-    { icon: '📺', title: 'Akıllı TV', description: 'Yüksek çözünürlüklü akıllı televizyon' },
-    { icon: '🛁', title: 'Özel Banyo', description: 'Modern donanımlı özel banyo' },
-    { icon: '💼', title: 'Çalışma Masası', description: 'İş seyahatleri için uygun çalışma alanı' },
-    { icon: '🧊', title: 'Mini Buzdolabı', description: 'İhtiyaçlarınız için mini buzdolabı' }
+    { iconType: 'snowflake', title: 'Klima', description: 'Tüm odalarda merkezi klima sistemi' },
+    { iconType: 'wifi', title: 'Ücretsiz WiFi', description: 'Yüksek hızlı, ücretsiz internet bağlantısı' },
+    { iconType: 'tv', title: 'Akıllı TV', description: 'Yüksek çözünürlüklü akıllı televizyon' },
+    { iconType: 'bath', title: 'Özel Banyo', description: 'Modern donanımlı özel banyo' },
+    { iconType: 'briefcase', title: 'Çalışma Masası', description: 'İş seyahatleri için uygun çalışma alanı' },
+    { iconType: 'fridge', title: 'Mini Buzdolabı', description: 'İhtiyaçlarınız için mini buzdolabı' }
   ];
 
   hotelFacilities = [
-    { icon: '🕐', title: '7/24 Resepsiyon Hizmeti', description: 'Günün her saati hizmetinizdeyiz. Rezervasyon, check-in/check-out işlemleriniz için 7/24 resepsiyon hizmetimiz mevcuttur.' },
-    { icon: '📶', title: 'Ücretsiz WiFi', description: 'Tüm odalarımızda ve ortak alanlarımızda yüksek hızlı, ücretsiz internet bağlantısı sunuyoruz.' },
-    { icon: '⏰', title: 'Esnek Check-in/Check-out', description: 'İhtiyaçlarınıza göre esnek check-in ve check-out saatleri sunuyoruz.' },
-    { icon: '📅', title: 'Hızlı Rezervasyon', description: 'Online rezervasyon sistemimizle kolay ve hızlı rezervasyon yapabilirsiniz.' },
-    { icon: '👤', title: 'Müşteri Desteği', description: 'Her türlü sorunuz ve ihtiyacınız için profesyonel müşteri hizmetleri ekibimiz yanınızda.' },
-    { icon: '🚗', title: 'Ücretsiz Otopark', description: 'Güvenli ve ücretsiz otopark hizmeti' },
-    { icon: '👶', title: 'Çocuk Dostu', description: 'Çocuk dostu konaklama ortamı' }
+    { iconType: 'clock', title: '7/24 Resepsiyon Hizmeti', description: 'Günün her saati hizmetinizdeyiz. Rezervasyon, check-in/check-out işlemleriniz için 7/24 resepsiyon hizmetimiz mevcuttur.' },
+    { iconType: 'wifi', title: 'Ücretsiz WiFi', description: 'Tüm odalarımızda ve ortak alanlarımızda yüksek hızlı, ücretsiz internet bağlantısı sunuyoruz.' },
+    { iconType: 'time', title: 'Esnek Check-in/Check-out', description: 'İhtiyaçlarınıza göre esnek check-in ve check-out saatleri sunuyoruz.' },
+    { iconType: 'calendar', title: 'Hızlı Rezervasyon', description: 'Online rezervasyon sistemimizle kolay ve hızlı rezervasyon yapabilirsiniz.' },
+    { iconType: 'user', title: 'Müşteri Desteği', description: 'Her türlü sorunuz ve ihtiyacınız için profesyonel müşteri hizmetleri ekibimiz yanınızda.' },
+    { iconType: 'car', title: 'Ücretsiz Otopark', description: 'Güvenli ve ücretsiz otopark hizmeti' },
+    { iconType: 'baby', title: 'Çocuk Dostu', description: 'Çocuk dostu konaklama ortamı' }
   ];
 
   securityFacilities = [
-    { icon: '🧹', title: 'Günlük Temizlik', description: 'Odalarınız her gün profesyonel ekibimiz tarafından temizlenir ve düzenlenir.' },
-    { icon: '🛡️', title: 'Güvenlik', description: '24 saat güvenlik kameraları ve güvenlik personeli ile güvenliğiniz bizim önceliğimizdir.' }
+    { iconType: 'cleaning', title: 'Günlük Temizlik', description: 'Odalarınız her gün profesyonel ekibimiz tarafından temizlenir ve düzenlenir.' },
+    { iconType: 'shield', title: 'Güvenlik', description: '24 saat güvenlik kameraları ve güvenlik personeli ile güvenliğiniz bizim önceliğimizdir.' }
   ];
 
   locationFacilities = [
-    { icon: '📍', title: 'Merkezi Konum', description: 'Kurtköy\'ün merkezi noktasında konumlanmış otelimizle ulaşım kolaylığı sağlıyoruz.' }
+    { iconType: 'location', title: 'Merkezi Konum', description: 'Kurtköy\'ün merkezi noktasında konumlanmış otelimizle ulaşım kolaylığı sağlıyoruz.' }
   ];
 
   scrollToRooms() {

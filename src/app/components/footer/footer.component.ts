@@ -20,4 +20,8 @@ export class FooterComponent {
     event.preventDefault();
     this.router.navigate(['/sartlar-ve-kosullar']);
   }
+
+  goToLocation() {
+    this.router.navigate(['/konum']);
+  }
 }
