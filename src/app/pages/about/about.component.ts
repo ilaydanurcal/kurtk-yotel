@@ -14,4 +14,12 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
     this.seo.updatePageForRoute('/hakkimizda');
   }
+
+  handleImageError(event: Event) {
+    const img = event.target as HTMLImageElement;
+    if (img) {
+      img.src = 'assets/images/pendik-dıs.jpeg';
+      img.onerror = null; // Sonsuz döngüyü önle
+    }
+  }
 }

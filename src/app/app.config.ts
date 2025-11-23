@@ -5,7 +5,7 @@ import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    // HTML5 History API kullan (hash'siz temiz URL'ler)
+    // HTML5 History API kullan (temiz URL'ler, # işareti yok)
     provideRouter(routes)
   ]
 };

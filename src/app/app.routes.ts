@@ -1,24 +1,42 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { RoomsComponent } from './pages/rooms/rooms.component';
-import { AboutComponent } from './pages/about/about.component';
-import { ContactComponent } from './pages/contact/contact.component';
-import { FaqComponent } from './pages/faq/faq.component';
-import { BlogComponent } from './pages/blog/blog.component';
-import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
-import { KvkkComponent } from './pages/kvkk/kvkk.component';
-import { TermsComponent } from './pages/terms/terms.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'hakkimizda', component: AboutComponent },
-  { path: 'odalar', component: RoomsComponent },
+  { 
+    path: '', 
+    loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent)
+  },
+  { 
+    path: 'hakkimizda', 
+    loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent)
+  },
+  { 
+    path: 'odalar', 
+    loadComponent: () => import('./pages/rooms/rooms.component').then(m => m.RoomsComponent)
+  },
   { path: 'konum', redirectTo: '/iletisim', pathMatch: 'full' },
-  { path: 'sss', component: FaqComponent },
-  { path: 'iletisim', component: ContactComponent },
-  { path: 'blog', component: BlogComponent },
-  { path: 'blog/:slug', component: BlogDetailComponent },
-  { path: 'kvkk', component: KvkkComponent },
-  { path: 'sartlar-ve-kosullar', component: TermsComponent },
+  { 
+    path: 'sss', 
+    loadComponent: () => import('./pages/faq/faq.component').then(m => m.FaqComponent)
+  },
+  { 
+    path: 'iletisim', 
+    loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent)
+  },
+  { 
+    path: 'blog', 
+    loadComponent: () => import('./pages/blog/blog.component').then(m => m.BlogComponent)
+  },
+  { 
+    path: 'blog/:slug', 
+    loadComponent: () => import('./pages/blog-detail/blog-detail.component').then(m => m.BlogDetailComponent)
+  },
+  { 
+    path: 'kvkk', 
+    loadComponent: () => import('./pages/kvkk/kvkk.component').then(m => m.KvkkComponent)
+  },
+  { 
+    path: 'sartlar-ve-kosullar', 
+    loadComponent: () => import('./pages/terms/terms.component').then(m => m.TermsComponent)
+  },
   { path: '**', redirectTo: '' }
 ];

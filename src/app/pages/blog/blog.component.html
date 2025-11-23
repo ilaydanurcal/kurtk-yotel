@@ -17,9 +17,9 @@
     </div>
 
     <div class="blog-grid">
-      <article class="blog-card" *ngFor="let post of blogPosts">
+      <article class="blog-card" *ngFor="let post of blogPosts; trackBy: trackByPost">
         <div class="blog-image-wrapper">
-          <img [src]="post.image" [alt]="post.title" (error)="onImageError($event)" />
+          <img [src]="post.image" [alt]="post.title" width="400" height="250" loading="lazy" decoding="async" (error)="onImageError($event)" />
           <span class="blog-category">{{ post.category }}</span>
         </div>
         <div class="blog-content">
@@ -32,7 +32,7 @@
             {{ post.date }}
           </p>
           <p class="blog-excerpt">{{ post.excerpt }}</p>
-          <a [routerLink]="['/blog', post.slug]" class="blog-link">Devamını Oku 
+          <a [routerLink]="['/blog', post.slug]" [href]="'/blog/' + post.slug" class="blog-link">Devamını Oku 
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>

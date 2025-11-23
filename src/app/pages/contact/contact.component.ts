@@ -12,7 +12,7 @@ import { SeoService } from '../../services/seo.service';
 })
 export class ContactComponent implements OnInit {
   phoneNumber = '02163071217';
-  whatsappNumber = '905400385000';
+  whatsappNumber = '905451705050';
 
   constructor(private seo: SeoService) {}
 

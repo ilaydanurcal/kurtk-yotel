@@ -46,6 +46,12 @@ export class SeoService {
       { property: 'og:description', content: pageData.description },
       { property: 'og:url', content: pageData.url || 'https://www.kurtkoyotel.com' },
       { property: 'og:image', content: pageData.image || 'https://www.kurtkoyotel.com/assets/images/kurtköy-logo.png' },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '630' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:locale', content: 'tr_TR' },
+      { property: 'og:site_name', content: 'Kurtköy Otel' },
+      { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: pageData.title },
       { name: 'twitter:description', content: pageData.description },
       { name: 'twitter:image', content: pageData.image || 'https://www.kurtkoyotel.com/assets/images/kurtköy-logo.png' }

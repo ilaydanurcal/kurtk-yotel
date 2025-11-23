@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-content">
       <!-- Column 1: Kurtköy Otel -->
@@ -19,32 +19,32 @@
       <div class="footer-section">
         <h4>Hızlı Linkler</h4>
         <ul>
-          <li><a routerLink="/">Ana Sayfa</a></li>
-          <li><a routerLink="/odalar">Oda Seçenekleri</a></li>
-          <li><a routerLink="/">Olanaklar</a></li>
-          <li><a routerLink="/iletisim">İletişim & Konum</a></li>
-          <li><a routerLink="/sss">SSS</a></li>
+          <li><a routerLink="/" href="/">Ana Sayfa</a></li>
+          <li><a routerLink="/odalar" href="/odalar">Oda Seçenekleri</a></li>
+          <li><a routerLink="/" href="/">Olanaklar</a></li>
+          <li><a routerLink="/iletisim" href="/iletisim">İletişim & Konum</a></li>
+          <li><a routerLink="/sss" href="/sss">SSS</a></li>
         </ul>
       </div>
 
       <!-- Column 3: İletişim Bilgileri -->
       <div class="footer-section">
         <h4>İletişim Bilgileri</h4>
-        <a href="tel:02163071217" class="contact-item contact-item-link">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a href="tel:02163071217" class="contact-item contact-item-link" aria-label="Telefon ile ara: 0216 307 12 17">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/>
           </svg>
           <span>0216 307 12 17</span>
         </a>
         <div class="contact-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="currentColor"/>
             <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" fill="none"/>
           </svg>
           <span>info&#64;kurtkoyhotel.com</span>
         </div>
-        <div class="contact-item address-item" (click)="goToLocation()" style="cursor: pointer;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <button type="button" class="contact-item address-item" (click)="goToLocation()" aria-label="Konum sayfasına git">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" fill="currentColor"/>
             <circle cx="12" cy="10" r="3" fill="#fff"/>
           </svg>
@@ -52,15 +52,15 @@
             <span>Esenler, Rifat Ilgaz Cd No:120</span>
             <span>34899 Pendik/İstanbul</span>
           </div>
-        </div>
+        </button>
       </div>
 
       <!-- Column 4: Hukuki Bilgiler -->
       <div class="footer-section">
         <h4>Hukuki Bilgiler</h4>
         <ul>
-          <li><a routerLink="/kvkk">KVKK Aydınlatma</a></li>
-          <li><a routerLink="/sartlar-ve-kosullar">Şartlar & Koşullar</a></li>
+          <li><a routerLink="/kvkk" href="/kvkk">KVKK Aydınlatma</a></li>
+          <li><a routerLink="/sartlar-ve-kosullar" href="/sartlar-ve-kosullar">Şartlar & Koşullar</a></li>
         </ul>
       </div>
     </div>

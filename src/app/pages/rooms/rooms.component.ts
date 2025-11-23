@@ -1,23 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { SeoService } from '../../services/seo.service';
+import { ImageLoaderService } from '../../services/image-loader.service';
 
 @Component({
   selector: 'app-rooms',
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './rooms.component.html',
-  styleUrl: './rooms.component.css'
+  styleUrl: './rooms.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RoomsComponent implements OnInit {
+export class RoomsComponent implements OnInit, AfterViewInit {
   phoneNumber = '02163071217';
-  whatsappNumber = '905400385000';
+  whatsappNumber = '905451705050';
 
-  constructor(private seo: SeoService) {}
+  constructor(
+    private seo: SeoService,
+    private imageLoader: ImageLoaderService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     this.seo.updatePageForRoute('/odalar');
+    // İlk görünen resmi önceden yükle
+    if (this.rooms.length > 0) {
+      this.imageLoader.preloadImage(this.rooms[0].image).catch(() => {});
+    }
+  }
+
+  ngAfterViewInit() {
+    // Lazy load resimleri gözlemle
+    setTimeout(() => {
+      const images = document.querySelectorAll('img[data-src]');
+      images.forEach((img) => {
+        this.imageLoader.observeImage(img as HTMLImageElement);
+      });
+    }, 100);
   }
 
   rooms = [
@@ -210,7 +230,33 @@ export class RoomsComponent implements OnInit {
   handleImageError(event: Event) {
     const img = event.target as HTMLImageElement;
     if (img) {
-      img.src = '/assets/images/standart-room.JPG';
+      img.src = 'assets/images/standart-room.JPG';
     }
+  }
+
+  loadGalleryImages(event: Event, room: any) {
+    const gallery = (event.target as HTMLElement).closest('.room-gallery');
+    if (gallery) {
+      const images = gallery.querySelectorAll('img[data-src]');
+      images.forEach((element) => {
+        const img = element as HTMLImageElement;
+        if (img.dataset['src']) {
+          img.src = img.dataset['src'];
+          img.removeAttribute('data-src');
+        }
+      });
+    }
+  }
+
+  trackByRoom(index: number, room: any): number {
+    return room.id || index;
+  }
+
+  trackByFeature(index: number, feature: any): string {
+    return feature.name || index;
+  }
+
+  trackByGallery(index: number, img: string): string {
+    return img || `img-${index}`;
   }
 }

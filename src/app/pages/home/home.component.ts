@@ -1,26 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SeoService } from '../../services/seo.service';
+import { ImageLoaderService } from '../../services/image-loader.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [RouterLink, CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   phoneNumber = '02163071217';
-  whatsappNumber = '905400385000';
+  whatsappNumber = '905451705050';
 
   constructor(
     private seo: SeoService,
-    private router: Router
+    private router: Router,
+    private imageLoader: ImageLoaderService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
     this.seo.updatePageForRoute('/');
+    // İlk görünen resmi önceden yükle
+    if (this.rooms.length > 0) {
+      this.imageLoader.preloadImage(this.rooms[0].image).catch(() => {});
+    }
+  }
+
+  ngAfterViewInit() {
+    // Lazy load resimleri gözlemle
+    setTimeout(() => {
+      const images = document.querySelectorAll('img[data-src]');
+      images.forEach((img) => {
+        this.imageLoader.observeImage(img as HTMLImageElement);
+      });
+      // Change detection'ı tetikle
+      this.cdr.detectChanges();
+    }, 100);
   }
 
   rooms = [
@@ -133,7 +153,15 @@ export class HomeComponent implements OnInit {
   handleImageError(event: Event) {
     const img = event.target as HTMLImageElement;
     if (img) {
-      img.src = '/assets/images/standart-room.JPG';
+      img.src = 'assets/images/standart-room.JPG';
     }
+  }
+
+  trackByRoom(index: number, room: any): any {
+    return room.name || index;
+  }
+
+  trackByTag(index: number, tag: string): string {
+    return tag || `tag-${index}`;
   }
 }

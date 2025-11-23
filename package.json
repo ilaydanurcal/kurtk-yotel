@@ -4,7 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && npm run copy-htaccess && npm run copy-missing-assets",
+    "copy-htaccess": "if exist public\\.htaccess (copy public\\.htaccess dist\\kurtkoy-otel\\browser\\.htaccess) & if exist public\\htaccess.txt (copy public\\htaccess.txt dist\\kurtkoy-otel\\browser\\htaccess.txt) & if exist public\\HTACCESS-ICERIGI.txt (copy public\\HTACCESS-ICERIGI.txt dist\\kurtkoy-otel\\browser\\HTACCESS-ICERIGI.txt) & if exist public\\web.config (copy public\\web.config dist\\kurtkoy-otel\\browser\\web.config) & if exist public\\NATRO-KURULUM.txt (copy public\\NATRO-KURULUM.txt dist\\kurtkoy-otel\\browser\\NATRO-KURULUM.txt)",
+    "copy-missing-assets": "powershell -Command \"$files = Get-ChildItem 'src\\assets\\images' -File | Where-Object { $_.Name -like '*logo*' -or $_.Name -like '*pendik*' }; foreach ($f in $files) { $dest = 'dist\\kurtkoy-otel\\browser\\assets\\images\\' + $f.Name; Copy-Item $f.FullName -Destination $dest -Force }\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

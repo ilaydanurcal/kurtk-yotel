@@ -1,6 +1,14 @@
 User-agent: *
 Allow: /
 
+# Google Bot için özel ayarlar
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+
 # Sitemap
 Sitemap: https://www.kurtkoyotel.com/sitemap.xml
 
@@ -8,16 +16,17 @@ Sitemap: https://www.kurtkoyotel.com/sitemap.xml
 Disallow: /admin/
 Disallow: /private/
 
-# Allow all important pages
+# Tüm sayfaları açıkça allow et (crawlable yap)
 Allow: /
 Allow: /odalar
 Allow: /hakkimizda
 Allow: /iletisim
 Allow: /sss
 Allow: /blog
+Allow: /blog/
 Allow: /kvkk
 Allow: /sartlar-ve-kosullar
 
-# Crawl-delay
-Crawl-delay: 1
+# Blog yazılarını allow et
+Allow: /blog/*
 

@@ -1,38 +1,62 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" xml:lang="tr">
 <head>
   <meta charset="utf-8">
   <title>Kurtköy Otel Pendik - İstanbul'da Konforlu Konaklama | Rezervasyon</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="/assets/images/kurtkoy-logo.png">
-  <link rel="apple-touch-icon" href="/assets/images/kurtkoy-logo.png">
   
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KDK62PB7');</script>
-  <!-- End Google Tag Manager -->
+  <!-- Security Headers -->
+  <!-- Content Security Policy (CSP) - XSS koruması -->
+  <!-- Trusted Types ile DOM XSS koruması dahil -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.googletagmanager.com/gtm.js https://www.googletagmanager.com/gtag/js; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.googletagmanager.com/gtm.js https://www.googletagmanager.com/gtag/js https://www.google-analytics.com/g/collect; frame-src 'self' https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests; require-trusted-types-for 'script';">
   
-  <!-- Google Fonts - DM Sans -->
+  <!-- HTTP Strict Transport Security (HSTS) - Güçlü politika -->
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+  
+  <!-- Cross-Origin-Opener-Policy (COOP) - Kaynak izolasyonu -->
+  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+  
+  <!-- Cross-Origin-Resource-Policy (CORP) -->
+  <meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin">
+  <link rel="icon" type="image/png" href="assets/images/kurtköy-logo.png">
+  <link rel="apple-touch-icon" href="assets/images/kurtköy-logo.png">
+  <!-- Critical Resources Preload (Google için performans) -->
+  <link rel="preload" href="assets/images/kurtköy-logo.png" as="image" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  
+  <!-- Google Tag Manager (Optimized - Deferred) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtmStart(){var w=window,d=document,s='script',l='dataLayer',i='GTM-KDK62PB7';
+    w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;j.defer=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);}
+    if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',gtmStart);}else{gtmStart();}
+  </script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- Google Fonts - DM Sans (Optimized) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet"></noscript>
   
   <!-- Google Search Console Verification -->
   <meta name="google-site-verification" content="yHrEajp8MW9hSsj-euWlMKOYlrBLAEbX8hbIi3tvnFY"/>
   
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9GCEXXKW4"></script>
+  <!-- Google tag (gtag.js) - Deferred for better performance -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-W9GCEXXKW4');
   </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9GCEXXKW4" defer></script>
   
   <!-- Primary Meta Tags for SEO -->
   <meta name="title" content="Kurtköy Otel Pendik - İstanbul'da Konforlu Konaklama | Rezervasyon">
@@ -40,6 +64,7 @@
   <meta name="keywords" content="kurtköy otel, pendik otel, istanbul otel, kurtköy konaklama, pendik konaklama, kurtköy hotel, pendik hotel, istanbul hotel, kurtköy otel rezervasyon, pendik otel rezervasyon, kurtköy otel fiyat, pendik otel fiyat, kurtköy otel odalar, pendik otel odalar, istanbul konaklama, günlük kiralık oda kurtköy, günlük kiralık oda pendik">
   <meta name="author" content="Kurtköy Otel">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="language" content="Turkish">
   <meta name="geo.region" content="TR-34">
   <meta name="geo.placename" content="İstanbul">
@@ -97,6 +122,13 @@
       "@type": "Rating",
       "ratingValue": "4.8",
       "bestRating": "5"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
     },
     "amenityFeature": [
       {
@@ -189,11 +221,34 @@
     ]
   }
   </script>
+  
+  <!-- Structured Data - WebSite Schema (Google için) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Kurtköy Otel",
+    "url": "https://www.kurtkoyotel.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.kurtkoyotel.com/blog?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Kurtköy Otel",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.kurtkoyotel.com/assets/images/kurtköy-logo.png"
+      }
+    }
+  }
+  </script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDK62PB7"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   
   <app-root></app-root>

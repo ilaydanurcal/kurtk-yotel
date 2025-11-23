@@ -16,7 +16,7 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
   title = 'Kurtköy Otel';
-  whatsappNumber = '905400385000';
+  whatsappNumber = '905451705050';
 
   constructor(
     private router: Router,

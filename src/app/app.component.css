@@ -1,4 +1,31 @@
-/* Mobil Sabit İletişim Butonları */
+/* Skip Link - Erişilebilirlik için */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 10000;
+  border-radius: 0 0 4px 0;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--primary-light);
+  outline-offset: 2px;
+}
+
+/* Main Content */
+main {
+  min-height: calc(100vh - 200px);
+  padding-top: 0;
+}
+
+/* Mobil Sabit İletişim Butonları - Kompakt Tasarım */
 .mobile-fixed-buttons {
   position: fixed;
   bottom: 0;
@@ -6,10 +33,10 @@
   right: 0;
   display: flex;
   gap: 0.5rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.95);
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
   border-top: 1px solid var(--border-color);
   display: none; /* Desktop'ta gizli */
@@ -20,16 +47,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 1rem;
+  gap: 0.5rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.875rem;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   cursor: pointer;
   border: none;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  min-height: 44px; /* Dokunma için minimum yükseklik */
+  max-height: 48px;
 }
 
 .mobile-btn-call {
@@ -40,8 +69,8 @@
 .mobile-btn-call:hover,
 .mobile-btn-call:active {
   background: #1d4ed8;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
 .mobile-btn-whatsapp {
@@ -52,19 +81,19 @@
 .mobile-btn-whatsapp:hover,
 .mobile-btn-whatsapp:active {
   background: #20ba5a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
 }
 
 .mobile-btn svg {
   flex-shrink: 0;
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
 }
 
 .mobile-btn span {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 500;
   white-space: nowrap;
 }
 
@@ -76,16 +105,53 @@
 
   /* Footer için bottom padding ekle (mobilde butonlar altında olmasın) */
   app-footer {
-    padding-bottom: 100px;
+    padding-bottom: 70px;
   }
 }
 
-/* Küçük ekranlar için buton boyutunu küçült */
+/* Küçük ekranlar için buton boyutunu daha da küçült */
 @media (max-width: 480px) {
   .mobile-btn {
-    padding: 0.875rem 1rem;
-    gap: 0.5rem;
-    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    min-height: 40px;
+    max-height: 44px;
+  }
+
+  .mobile-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .mobile-btn span {
+    font-size: 0.8rem;
+  }
+
+  .mobile-fixed-buttons {
+    padding: 0.5rem;
+    gap: 0.4rem;
+  }
+
+  app-footer {
+    padding-bottom: 65px;
+  }
+}
+
+/* Çok küçük ekranlar için sadece ikon göster (daha kompakt) */
+@media (max-width: 360px) {
+  .mobile-btn span {
+    display: none;
+  }
+
+  .mobile-btn {
+    padding: 0.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    min-width: 44px;
+    max-width: 48px;
+    min-height: 44px;
+    max-height: 48px;
   }
 
   .mobile-btn svg {
@@ -93,30 +159,13 @@
     height: 20px;
   }
 
-  .mobile-btn span {
-    font-size: 0.9rem;
-  }
-
   .mobile-fixed-buttons {
+    justify-content: center;
+    gap: 0.75rem;
     padding: 0.75rem;
-    gap: 0.5rem;
-  }
-}
-
-/* Çok küçük ekranlar için sadece ikon göster */
-@media (max-width: 360px) {
-  .mobile-btn span {
-    display: none;
   }
 
-  .mobile-btn {
-    padding: 1rem;
-    aspect-ratio: 1;
-    border-radius: 50%;
-  }
-
-  .mobile-btn svg {
-    width: 24px;
-    height: 24px;
+  app-footer {
+    padding-bottom: 70px;
   }
 }
